@@ -88,13 +88,13 @@ public class Main {
         tampilkanNilai();
     }
 
-    static void cariMahasiswa() {
+    static void cariMahasiswa() { //menggunakan linear search (sequential search) untuk mengecek satu persatu elemen dalam array 
         System.out.print("Masukkan NIM yang dicari: ");
         String nimCari = sc.nextLine();
         boolean ditemukan = false;
 
         for (Penilaian p : data) {
-            if (p.mahasiswa.nim.equals(nimCari)) {
+            if (p.mahasiswa.nim == nimCari) {
                 if (!ditemukan) {
                     System.out.println("Data ditemukan:");
                     ditemukan = true;
