@@ -71,5 +71,43 @@ public class Main {
                     " | Nilai Akhir: " + String.format("%.2f", p.hitungNilaiAkhir()));
         }
     }
+    
+    static void urutkanNilaiAkhir() {
+        // Bubble Sort
+        for (int i = 0; i < data.length - 1; i++) {
+            for (int j = 0; j < data.length - i - 1; j++) {
+                if (data[j].hitungNilaiAkhir() > data[j + 1].hitungNilaiAkhir()) {
+                    Penilaian temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
+        }
 
+        System.out.println("\nDATA NILAI SETELAH DIURUTKAN:");
+        tampilkanNilai();
+    }
+
+    static void cariMahasiswa() {
+        System.out.print("Masukkan NIM yang dicari: ");
+        String nimCari = sc.nextLine();
+        boolean ditemukan = false;
+
+        for (Penilaian p : data) {
+            if (p.mahasiswa.nim.equals(nimCari)) {
+                if (!ditemukan) {
+                    System.out.println("Data ditemukan:");
+                    ditemukan = true;
+                }
+                System.out.println("Nama: " + p.mahasiswa.nama + 
+                    " | Mata Kuliah: " + p.mataKuliah.namaMK + 
+                    " | Nilai Akhir: " + String.format("%.2f", p.hitungNilaiAkhir()));
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Data dengan NIM tersebut tidak ditemukan.");
+        }
+    }
+}
    
