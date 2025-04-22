@@ -8,6 +8,10 @@ public class Mahasiswa {
         this.nim = nim;
         this.prodi = prodi;
     }
+     
+    Mahasiswa(){
+        
+    }
 
     void tampilMahasiswa() {
         System.out.println("NIM: " + nim + " | Nama: " + nama + " | Prodi: " + prodi);

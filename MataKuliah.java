@@ -4,8 +4,8 @@ public class MataKuliah {
     String namaMK;
     int sks;
 
-    MataKuliah(String kodeMK, String namaMK, int sks) {
-        this.kodeMK = kodeMK;  
+    MataKuliah(String kodeMatkul, String namaMK, int sks) {
+        kodeMK = kodeMatkul;  
         this.namaMK = namaMK;  
         this.sks = sks;  
     }
